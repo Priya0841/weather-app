@@ -1,4 +1,4 @@
-const apiKey = '8a6552895d9dfeaddd4dc5e0134d9ab7';  // Replace with your OpenWeatherMap API key
+const apiKey = '8a6552895d9dfeaddd4dc5e0134d9ab7';  
 
 async function getWeather() {
     const city = document.getElementById('city').value;
@@ -14,10 +14,8 @@ async function getWeather() {
         if (data.cod === 200) {
             displayWeather(data);
         } else if (data.cod === '404') {
-            // If city is not found, show this message
             document.getElementById('weather-info').innerHTML = `<p>City not found. Please enter a valid city name.</p>`;
         } else {
-            // For other errors (if any)
             alert('An error occurred. Please try again.');
         }
     } catch (error) {
